@@ -7,7 +7,7 @@ extern "C" {
 
 typedef void* TYPE;
 
-typedef struct C_AVLTree
+typedef struct C_AVLTree //c tree
 {
     void* internals;
     char* metadata;

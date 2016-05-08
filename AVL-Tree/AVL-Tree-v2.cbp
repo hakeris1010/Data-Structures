@@ -4,13 +4,13 @@
 	<Project>
 		<Option title="Simple-AVL-Tree-v2" />
 		<Option pch_mode="2" />
-		<Option compiler="gcc" />
+		<Option compiler="gnu_gcc_mingw_new_compiler" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Simple-AVL-Tree-v2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="gnu_gcc_mingw_new_compiler" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -19,7 +19,7 @@
 				<Option output="bin/Release/Simple-AVL-Tree-v2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="gnu_gcc_mingw_new_compiler" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -31,22 +31,17 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
+			<Add option="-std=c99" />
 			<Add directory="C:/Users/Kestutis/Documents/CodeBlocks Projects/Univeras GitHub Repo/RepoSpace/ADS/Simple-AVL-Tree-v2/src" />
+			<Add directory="C:/Users/Kestutis/Documents/CodeBlocks Projects/Data Structures/AVL-Tree/AVLTree/include" />
 		</Compiler>
-		<Unit filename="src/C-Interface/c_avltree.cpp" />
-		<Unit filename="src/C-Interface/c_avltree.h" />
-		<Unit filename="src/Tools/fun.h" />
-		<Unit filename="src/Tools/logger.cpp" />
-		<Unit filename="src/Tools/logger.h" />
-		<Unit filename="src/TreeImpl/avltree.cpp" />
-		<Unit filename="src/TreeImpl/avltree.h" />
-		<Unit filename="src/TreeImpl/treenode.cpp" />
-		<Unit filename="src/TreeImpl/treenode.h" />
-		<Unit filename="src/TreeImpl/treetoolmodes.h" />
-		<Unit filename="src/TreeImpl/treetools.cpp" />
-		<Unit filename="src/TreeImpl/treetools.h" />
-		<Unit filename="src/debdefines.h" />
-		<Unit filename="src/main.cpp" />
+		<Linker>
+			<Add library="C:\Users\Kestutis\Documents\CodeBlocks Projects\Data Structures\AVL-Tree\AVLTree\lib\libAVLTreeTest.a" />
+		</Linker>
+		<Unit filename="AVLTree/include/c_avltree.h" />
+		<Unit filename="AVLTree/test/c_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

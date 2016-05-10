@@ -5,6 +5,7 @@
 extern "C" {
 #endif
 
+//Galite pakeisti 'int' i savo norima tipa. (veiks ne su visais!)
 typedef int TYPE;
 
 typedef struct C_AVLTree //c tree

@@ -40,6 +40,25 @@ extern "C" void avl_initTree(C_AVLTree* tree) //initialize the tree - always cal
         errCode = BadAlloc;
 }
 
+extern "C" void avl_clearTree(C_AVLTree* tree, char destroyObject)
+{
+    if((!tree ? 1 : !tree->internals) || errCode) return;
+    getInternalsFromTree(tree)->clear();
+
+    if(destroyObject)
+    {
+        delete (AVLTree<TYPE>*)(tree->internals);
+        tree->internals = NULL;
+
+        if(tree->metadata)
+        {
+            delete tree->metadata;
+            tree->metadata = NULL;
+        }
+
+    }
+}
+
 extern "C" void avl_setCallbacks(C_AVLTree* tree, void (*valDest)(TYPE*), char (*elemEvaluator)(TYPE, TYPE), const char* (*eShower)(TYPE))
 {
     if((!tree ? 1 : !tree->internals) || errCode) return;
@@ -84,19 +103,6 @@ extern "C" void avl_clearTree_setCallback(C_AVLTree* tree, void (*valDest)(TYPE*
     getInternalsFromTree(tree)->setElemDestructor(valDest);
 
     avl_clearTree( tree, destroyObject );
-}
-
-extern "C" void avl_clearTree(C_AVLTree* tree, char destroyObject)
-{
-    if((!tree ? 1 : !tree->internals) || errCode) return;
-    getInternalsFromTree(tree)->clear();
-
-    if(destroyObject)
-    {
-        delete (AVLTree<TYPE>*)(tree->internals);
-        if(tree->metadata)
-            delete tree->metadata;
-    }
 }
 
 extern "C" void avl_addElement(C_AVLTree* tree, const TYPE val, char _copy, char ballance)

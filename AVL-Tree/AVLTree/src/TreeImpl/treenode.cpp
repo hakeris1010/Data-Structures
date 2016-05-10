@@ -57,7 +57,7 @@ void TreeNode<T>::clear( void (*valueDestructor)(T *val) )
     lChild = nullptr;
 
     mout<<"Done!\n\n";
-    mout.setCanPrint(true);
+    //mout.setCanPrint(true);
 }
 
 template<typename T>

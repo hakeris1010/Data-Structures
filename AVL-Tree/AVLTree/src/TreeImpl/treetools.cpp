@@ -203,11 +203,14 @@ void TreeTools<T>::getVectorTable_v2( TreeNode<T> *roo, TreeNode<T> *par, std::v
 
     //TODO: Optimize new positions more.
 
+    int spaces = (roo->getHeight() - level)*2;
+    if(spaces < 0) spaces = 0;
+
     if(/*roo != roo->getLeftChild() &&*/ (level==0 ? (bm != RightOnStart) : 1) && bm != Right) //everything except when branchMode == right only
-        getVectorTable_v2(roo->getLeftChild(), roo, table, eShow, level+1, curPlace - 1, true, goTillLevel, dm, pm, bm );
+        getVectorTable_v2(roo->getLeftChild(), roo, table, eShow, level+1, curPlace - 1 - spaces, true, goTillLevel, dm, pm, bm );
 
     if(/*roo != roo->getRightChild() &&*/ (level==0 ? (bm != LeftOnStart) : 1) && bm != Left)
-        getVectorTable_v2(roo->getRightChild(), roo, table, eShow, level+1, curPlace + valueStr.size(), false, goTillLevel, dm, pm, bm);
+        getVectorTable_v2(roo->getRightChild(), roo, table, eShow, level+1, curPlace + valueStr.size() + spaces, false, goTillLevel, dm, pm, bm);
 
     mout.setCanPrint(true);
 }

@@ -2,8 +2,8 @@ CCP=g++
 CC= gcc
 LCC=ar
 
-CPPFLAGS= -std=c++11 -c -Wall
-CFLAGS= -std=c99 -c -Wall
+CPPFLAGS= -std=c++11 -c 
+CFLAGS= -std=c99 -c 
 LDFLAGS=
 INCLUDE=-I"src/" -I"include/"
 LINKER= -L"lib/"

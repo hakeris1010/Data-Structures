@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-typedef void* TYPE;
+typedef int TYPE;
 
 typedef struct C_AVLTree //c tree
 {

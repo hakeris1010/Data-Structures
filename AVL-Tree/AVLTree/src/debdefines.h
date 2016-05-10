@@ -4,7 +4,7 @@
 class DebDef
 {
 public:
-    const static bool Debug_AVLTree_clearRecursive = true;
+    const static bool Debug_AVLTree_clearRecursive = false;
     const static bool Debug_AVLTree_addElement     = false;
     const static bool Debug_AVLTree_ballanceTree   = false;
     const static bool Debug_AVLTree_rotateLeft     = false;
@@ -12,9 +12,9 @@ public:
 
     const static bool Debug_TreeTools_getVectorTable = false;
 
-    const static bool Debug_TreeNode_Clear         = true;
-    const static bool Debug_ElemEvaluator          = true;
-    const static bool Debug_ElemDestructor         = true;
+    const static bool Debug_TreeNode_Clear         = false;
+    const static bool Debug_ElemEvaluator          = false;
+    const static bool Debug_ElemDestructor         = false;
 };
 
 #endif // DEBDEFINES_H_INCLUDED

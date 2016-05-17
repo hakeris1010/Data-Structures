@@ -216,19 +216,19 @@ void TreeTools<T>::getVectorTable_v2( TreeNode<T> *roo, TreeNode<T> *par, std::v
 }
 
 template<typename T>
-void TreeTools<T>::showTree_v2(const AVLTree<T> tree, TreeNode<T>* raat, const char* (*eShow)(T), int tillLevel, DataShowMode dm, PointerShowMode pm, BranchShowMode bm, int def_linelen)
+void TreeTools<T>::showTree_v2(const AVLTree<T> tree, TreeNode<T>* raat, const char* (*eShow)(T), int tillLevel, DataShowMode dm, PointerShowMode pm, BranchShowMode bm, std::ostream& outStream, int def_linelen)
 {
     if(!raat) raat = tree.getRoot();
 
     std::vector< std::string > table;
     getVectorTable_v2( raat, nullptr, table, eShow, 0, def_linelen/2, true, tillLevel, dm, pm, bm );
 
-    std::cout<<"\n";
+    outStream<<"\n";
     for(int i=0; i<table.size(); i++)
     {
-        std::cout<<table[i]<<"\n";
+        outStream<<table[i]<<"\n";
     }
-    std::cout<<"\n";
+    outStream<<"\n";
 }
 
 //supported template definitions

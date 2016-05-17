@@ -58,6 +58,7 @@ Temporary Items
 
 # Compiler-Generated files
 *.o
+*.a
 *.exe
 
 #Directories

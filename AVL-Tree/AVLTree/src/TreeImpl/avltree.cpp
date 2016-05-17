@@ -52,6 +52,12 @@ void AVLTree<T>::setElemShower(const char* (*eShow)(T))
 }
 
 template<typename T>
+void AVLTree<T>::setStandardOutstream(std::ostream& stream)
+{
+    stdStream = &stream; //seto our OutStream.
+}
+
+template<typename T>
 void AVLTree<T>::setFreeOnDestroy(bool val)
 {
     freeOnDestroy = val;
@@ -495,7 +501,7 @@ TreeNode<T>* AVLTree<T>::rotateRight(TreeNode<T>* tr)
 template<typename T>
 void AVLTree<T>::showTree( DataShowMode dm, PointerShowMode pm, BranchShowMode bm ) const
 {
-    TreeTools<T>::showTree_v2(*this, this->getRoot(), elemShower, -1, dm, pm, bm);
+    TreeTools<T>::showTree_v2(*this, this->getRoot(), elemShower, -1, dm, pm, bm, (stdStream ? *stdStream : std::cout) );
 
     //old
     //TreeTools<T>::showTree(*this, this->getRoot(), -1, ((mode >= 0 && mode < 5) ? mode : 0 ));

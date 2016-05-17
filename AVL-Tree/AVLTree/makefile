@@ -9,7 +9,7 @@ INCLUDE=-I"src/" -I"include/"
 LINKER= -L"lib/"
 
 OBJECTS_LIB= src/TreeImpl/treetools.o src/TreeImpl/treenode.o src/TreeImpl/avltree.o src/Tools/logger.o src/C-Interface/c_avltree.o
-OBJECTS_EXE= src/main.o
+OBJECTS_EXE= test/main.o
 OBJECTS_EXE_C= test/c_main.o
 
 EXECUTABLE= AVLTreeTest

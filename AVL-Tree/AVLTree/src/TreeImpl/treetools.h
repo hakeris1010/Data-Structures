@@ -4,9 +4,10 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <ostream>
+#include <iostream>
 #include "avltree.h"
 #include "treetoolmodes.h"
-
 
 struct TreeRotPointa
 {
@@ -36,8 +37,8 @@ public:
     static void getVectorTable_v2( TreeNode<T> *roo, TreeNode<T> *par, std::vector<std::string> &table, const char* (*eShow)(T), unsigned int level, int place, bool isLeft, \
                 int goTillLevel, DataShowMode dm, PointerShowMode pm, BranchShowMode bm );
 
-    static void showTree_v2(const AVLTree<T> tree, TreeNode<T>* raat = nullptr, const char* (*eShow)(T) = nullptr, int tillLevel = -1, DataShowMode dm = DataShowMode::Value, \
-                PointerShowMode pm = PointerShowMode::NoPointers, BranchShowMode bm = BranchShowMode::AllBranches, int def_linelen = ConsoleLineLenght);
+    static void showTree_v2( const AVLTree<T> tree, TreeNode<T>* raat = nullptr, const char* (*eShow)(T) = nullptr, int tillLevel = -1, DataShowMode dm = DataShowMode::Value, \
+                PointerShowMode pm = PointerShowMode::NoPointers, BranchShowMode bm = BranchShowMode::AllBranches, std::ostream& outStream = std::cout, int def_linelen = ConsoleLineLenght );
 };
 
 #endif // TREETOOLS_H_INCLUDED

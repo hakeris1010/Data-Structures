@@ -14,6 +14,8 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
+#include <ostream>
 
 #include "treenode.h"
 #include "treetoolmodes.h"
@@ -24,6 +26,8 @@ template<typename T>
 class AVLTree
 {
 private:
+    std::ostream* stdStream = &(std::cout);
+
     TreeNode<T>* root = nullptr;
     int elemCount = 0;
     bool freeOnDestroy = true;
@@ -49,6 +53,7 @@ public:
     void setElemDestructor(void (*valDest)(T*));
     void setElemEvaluator(char (*vEval)(T, T));
     void setElemShower(const char* (*eShow)(T));
+    void setStandardOutstream(std::ostream& stream);
 
     void clearRecursive(TreeNode<T>* last = nullptr, void (*valDest)(T*) = nullptr);
     void clear(void (*valDest)(T*) = nullptr);

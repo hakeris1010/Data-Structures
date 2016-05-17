@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include "c_avltree.h"
-#include "TreeImpl/avltree.h"
+#include "avltree.h"
 #include "Tools/logger.h"
 
 //Error info
